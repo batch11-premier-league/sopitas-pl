@@ -1,11 +1,15 @@
 <section id="most" class="container">
     <h5>Partidos en Vivo</h5>
     <div class="row">
-        <div class="col m3">
+    <img class="activator" ng-src="{{ $ctrl.data.image_small }}">
+    <img class="activator" ng-src="{{ $ctrl.data.image_medium }}">
+    <img class="activator" ng-src="{{ $ctrl.data.image_large }}">
+  
+        <!-- <div class="col m8">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                     <span class="price">0 - 0</span>
-                    <img class="activator" ng-src="{{pd.img}}">
+                    <img class="activator" ng-src="{{ $ctrl.data.image_large }}">
                     <span class="card-title">MAN - LIV<small><br>Primer tiempo</small></span>
                 </div>
             </div>
@@ -19,7 +23,7 @@
                     <span class="card-title">MAN - LIV<small><br>Primer tiempo</small></span>
                 </div>
             </div>
-        </div>
+        </div> -->
 <!-- 
         <div class="col m3">
             <div class="card {{pd.class}}" ng-repeat="pd in $ctrl.apiData | limitTo:2:3">
