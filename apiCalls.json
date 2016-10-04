@@ -1,0 +1,33 @@
+{
+	'team': {
+		'getItem': 'talksport.com/api/team/?method=getItem&team_id=1&hsh=823fa80840a88fb26ecb56eaf68250e5&app_id=mshndevmkt'
+		'getItems': 'talksport.com/api/team/?method=getItems&season_id=2016&tournament_id=8&hsh=204a2b292b4f62737accf9e564a17f7e&app_id=mshndevmkt',
+		'getID': 'talksport.com/api/team/?method=getID&team_slug=manchester-united&hsh=ba711f050018d878f11ecdadbb5c5fa3&app_id=mshndevmkt'
+	},
+
+	'tournament': {
+		'getItem': 'talksport.com/api/tournament/?method=getItem&tournament_id=8&hsh=823fa80840a88fb26ecb56eaf68250e5&app_id=mshndevmkt',
+		'getItems': 'talksport.com/api/tournament/?method=getItems&sport_id=1&hsh=204a2b292b4f62737accf9e564a17f7e&app_id=mshndevmkt',
+		'getTable': 'talksport.com/api/tournament/?method=getTable&sport_id=1&tournament_id=8&season_id=2016&hsh=87cff7f9245a84e5e0be934c6e7b837c&app_id=mshndevmkt'
+
+	},
+
+	'audio': {
+		'getFull': 'talksport.com/api/audio/?method=getFull&opta_id=1&lang=es&hsh=9d5f6a17d1851a1080d0565171f17329&app_id=mshndevmkt',
+		'getHighlights': 'talksport.com/api/audio/?method=getHighlights&opta_id=442011&lang=es&hsh=5a5f9375d5c58b2449feb2c9cc9433ac&app_id=mshndevmkt',
+		'getLiveStream': 'talksport.com/api/audio/?method=getLiveStream&opta_id=442011&lang=es&hsh=38bdf407e9915b72785b0412fc21b418&app_id=mshndevmkt'
+	},
+
+	'livescores': {
+		'getMatches': 'talksport.com/api/livescores/?method=getMatches',
+		'getScores': talksport.com/api/livescores/?method=getScores&ts=0&format=json,
+
+	},
+
+	'fixtures': {
+		'getScore': 'talksport.com/api/fixture/?method=getScore&match_id=885876&hsh=94a365530f20426f1882d5374f0a40af&app_id=mshndevmkt',
+		'getItem': 'talksport.com/api/fixture/?method=getItem&fixture_id=1178&hsh=823fa80840a88fb26ecb56eaf68250e5&app_id=mshndevmkt',
+		'getList': 'talksport.com/api/fixture/?method=getList&fixture_date=2016-10-01&sport_id=1&tournament_id=8&season_id=2016&hsh=255310244028f29f0d79b2581a4450cc&app_id=mshndevmkt',
+		'getResults': 'talksport.com/api/fixture/?method=getResults&sport_id=1&tournament_id=8&season_id=2016&hsh=c178aa4d845d75c676574e370b2d8f0c&app_id=mshndevmkt&day_limit=7'
+	}
+}
