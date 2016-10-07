@@ -1,26 +1,17 @@
 <section id="most" class="container">
-    <h5>Tabla de Posiciones</h5>
+    <h5>Alineación</h5>
     <div class="row">
-
+	{{ $ctrl.data }}
 
        <table>
         <thead>
           <tr>
-            <th data-field="id">#</th>
-            <th data-field="name">Equipo</th>
-            <th data-field="price">PJ</th>
-            <th data-field="price">G</th>
-            <th data-field="price">E</th>
-            <th data-field="price">P</th>
-            <th data-field="price">GF</th>
-            <th data-field="price">GC</th>
-            <th data-field="price">DG</th>
-            <th data-field="price">PTS</th>              
+                     
           </tr>
         </thead>
 
         <tbody>
-          <tr ng-repeat="team in $ctrl.data">
+          <!-- <tr ng-repeat="team in $ctrl.data">
             <td>{{team.position}}</td>
             <td>{{ team.full_team_name }}</td>
             <td>{{team.played}}</td>
@@ -31,7 +22,7 @@
             <td>{{team.against}}</td>
             <td>{{team.difference}}</td>
             <td>{{team.points}}</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     <br>         

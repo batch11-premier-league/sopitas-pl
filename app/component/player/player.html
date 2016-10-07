@@ -1,8 +1,8 @@
 <div class="pt-controls-wrapper">
     <div class="pt-controls">
-        <a class="pt-play-pause" href="#" title="Play/Pause">
-            <span class="play-btn"><i class="material-icons">play_arrow</i></span>
-            <span class="pause-btn"><i class="fa fa-pause"></i></span>
+        <a id="myAudio" class="pt-play-pause" ng-click="$ctrl.playAudio()" title="Play/Pause">
+            <span class="play-btn"><i class="material-icons" ng-show="!play">play_circle_outline</i></span>
+            <span class="pause-btn"><i class="material-icons" ng-show="play">pause_circle_outline</i></span>
         </a>
         <a class="pt-next" href="#" title="Next"> <i class="fa fa-step-forward"></i></a>
         <a class="pt-previous" href="#" title="Previous"> <i class="fa fa-step-backward"></i> </a>
