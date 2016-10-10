@@ -5,7 +5,8 @@
 		.module('sopitasApp')
 		.factory('apiTeam', apiTeam)
         .factory('apiTabla', apiTabla)
-        .factory('apiLineup', apiLineup);
+        .factory('apiLineup', apiLineup)
+        .factory('apiListGames', apiListGames);
 
 	apiTeam.$inject = ["$resource"];
 
@@ -35,6 +36,11 @@
         return $resource("http://talksport.com/api/team/?method=getItems&season_id=2016&tournament_id=8&hsh=204a2b292b4f62737accf9e564a17f7e&app_id=mshndevmkt");
         //return $resource("http://api.talksport.com/api/team/?method=getItem&team_id=1&hsh=823fa80840a88fb26ecb56eaf68250e5&app_id=mshndevmkt");
         //return $resource("http://www.talksport.com/api/team/?method=getItem&team_id="+team_id+"&hsh="+hsh+"&app_id="+app_id);
+    }
+
+    apiListGames.$inject = ["$resource"];
+    function apiListGames($resource){
+    	return $resource('http://talksport.com/api/fixture/?method=getList&sport_id=1&tournament_id=8&season_id=2016&hsh=255310244028f29f0d79b2581a4450cc&app_id=mshndevmkt')
     }
 
 })()

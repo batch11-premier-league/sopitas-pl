@@ -1,8 +1,8 @@
 /*
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
-* @Last Modified by:   manolocomi
-* @Last Modified time: 2016-10-01 08:41:58
+* @Last Modified by:   Manuel Comi
+* @Last Modified time: 2016-10-09 21:10:26
 */
 /* Font Family
 ================================================== */
@@ -14,8 +14,6 @@ html {
   width:100%;
 }
 body {
-  max-width:800px;
-  margin:1em;
   // font-family: "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   line-height:1.4em;
@@ -27,6 +25,52 @@ a {
   color:#0061b0;
   text-decoration:none;
 }
+@media only screen and (min-width: 601px){
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+      height: 105px;
+      line-height: 105px;
+  }
+  nav {
+      color: #fff;
+      width: 100%;
+      height: 105px;
+      line-height: 105px;
+  }
+}
+
+
+@media only screen and (max-width: 992px){
+  nav .brand-logo{
+      left: 5%;
+      -webkit-transform: translateX(-5%);
+      transform: translateX(-5%);
+  }
+  nav .brand-logo.center {
+    right: 5%;
+      -webkit-transform: translateX(-5%);
+      transform: translateX(-5%);
+  }
+}
+
+@media only screen and (max-width: 460px){
+  .brand-logo img{
+      max-width: 100px;
+      height: auto;
+      vertical-align: middle;
+  }
+  nav {
+    height: 65px;
+    line-height: 65px;
+  }
+}
+
+nav {
+    color: #fff;
+    background-color: #ffeb60;
+    width: 100%;
+    
+}
+
 .pt-previous,
 .pt-next {
   font-size:1.5em;
@@ -38,10 +82,11 @@ a {
 }
 
 /* Hide/Show */
-.pause-btn,
-.pt-play-pause.pt-playing .play-btn {
-  display:none;
-} 
+// .pause-btn,
+// .pt-play-pause.pt-playing .play-btn {
+//   display:none;
+// } 
+
 .pt-play-pause.pt-playing .pause-btn {
   display:inline-block;
 }

@@ -11,12 +11,25 @@
 </head>
 <body>
 
-
-<main ng-view></main>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo sopitas">
+            <img src="./assets/img/sopitas-logo.png" alt="sopitas.com logo" width="100%">
+          </a>
+          <a href="#" class="brand-logo pl center">
+            <img src="./assets/img/logo-pl.png" alt="premier league logo" height="100px;">
+          </a>
+          
+        </div>
+      </nav>
+    <main ng-view></main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script> -->
     <script src="app/app.js"></script>
     <script src="app/component/player/player.js"></script>
     <script src="app/component/games/games.js"></script>
@@ -25,5 +38,6 @@
 	<script src="app/routes/routes.js"></script>
     <script src="app/home/home.js"></script>
     <script src="app/factory/team.js"></script>
+    
 </body>
 </html>
