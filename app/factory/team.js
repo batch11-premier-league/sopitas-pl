@@ -6,7 +6,8 @@
 		.factory('apiTeam', apiTeam)
         .factory('apiTabla', apiTabla)
         .factory('apiLineup', apiLineup)
-        .factory('apiListGames', apiListGames);
+        .factory('apiListGames', apiListGames)
+        .factory('apiAlerts', apiAlerts)
 
 	apiTeam.$inject = ["$resource"];
 
@@ -41,6 +42,11 @@
     apiListGames.$inject = ["$resource"];
     function apiListGames($resource){
     	return $resource('http://talksport.com/api/fixture/?method=getList&sport_id=1&tournament_id=8&season_id=2016&hsh=255310244028f29f0d79b2581a4450cc&app_id=mshndevmkt')
+    }
+
+    apiAlerts.$inject = ['$resource'];
+    function apiAlerts ($resource) {
+    	return $resource('http://talksport.com/api/fixture/?method=getItem&fixture_id=58479688&hsh=823fa80840a88fb26ecb56eaf68250e5&app_id=mshndevmkt')
     }
 
 })()
