@@ -1,9 +1,10 @@
 <h5>Tabla de Posiciones</h5>
 <div class="card-panel">
-    <table class="highlight centered">
+    <table class="highlight ">
         <thead>
             <tr>
                 <th data-field="id">#</th>
+                <th data-field="name"></th>
                 <th data-field="name">Equipo</th>
                 <th data-field="price">PJ</th>
                 <th data-field="price">G</th>
@@ -16,8 +17,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="team in $ctrl.data">
+            <tr ng-repeat="team in $ctrl.data">                        
                 <td>{{team.position}}</td>
+                <td> <img ng-src="/img/{{team.team_id}}.png" width="15px" height="15px">
+                </td>
                 <td>{{ team.full_team_name }}</td>
                 <td>{{team.played}}</td>
                 <td>{{team.won}}</td>
