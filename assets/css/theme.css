@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-09 21:10:26
+* @Last Modified time: 2016-10-10 00:04:46
 */
 /* Font Family
 ================================================== */
@@ -38,6 +38,85 @@ a {
   }
 }
 
+.collection .collection-item span.home .circle {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.collection .collection-item span.away .circle {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.match-header {
+  display: flex;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.logo-name-1 {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.logo-name-2 {
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+.match-info {
+    margin: 1em 0em;
+}
+
+.home-team {
+    float: left;
+    width: 27%;
+}
+
+.home-team img {
+    max-width: 100%;
+    float: right;
+}
+
+.game-info {
+    float: left;
+    width: 45%;
+    text-align: center;
+}
+
+.game-info h3 {
+    font-size: 3em;
+    color: #3b3e45;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.game-info p {
+    font-size: 1.2em;
+    color: #656971;
+    line-height: 1.5em;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.away-team {
+    float: right;
+    width: 27%;
+}
+
+.away-team img {
+    max-width: 100%;
+}
 
 @media only screen and (max-width: 992px){
   nav .brand-logo{

@@ -2,7 +2,7 @@
 	'use strict';
 
 	var gamesList = {
-		templateUrl: './app/component/games/games.html',
+		templateUrl: './app/component/next-games/next-games.html',
 		controller: gamesListCtrl
 	}
 
@@ -34,7 +34,6 @@
 			    var game = {};
 
 			    game.kick_off_gmt = new Date(obj.kick_off_gmt+' UTC');
-			    console.log(obj.kick_off_gmt);
 			    game.sFullAwayTeam = obj.sFullAwayTeam;
 			    game.sFullHomeTeam = obj.sFullHomeTeam;
 			    //x will always be the array corresponding to the current DtmStamp. Push a value the current value to it.
