@@ -14,6 +14,12 @@
 	function gamesListCtrl (apiListGames, $timeout) {
 		var games = this;
 
+		function chageFormatDate(dateStr) {
+		    var parts = dateStr.split("-");
+		    var newDate = parts.reverse().join('-');
+		    return newDate
+		}
+
         apiListGames.get().$promise.then(function(response) {
             var data = response.data;
             // team.data.image_small = team.data.image_small.replace(/amp;/g, '');
@@ -24,11 +30,12 @@
 
 			for (var i = 0; i < data.length; ++i) {
 			    var obj = data[i];
-
+			    var fechaParaAgrupar = chageFormatDate(obj.fixture_date);
+			    console.log(obj.fixture_date);
 			    //If a property for this DtmStamp does not exist yet, create
-			    if (games.listByDate[obj.fixture_date] === undefined){
-			        games.listByDate[obj.fixture_date] = []; //Assign a new array with the first element of DtmStamp.
-			        games.listByDate[obj.fixture_date]
+			    if (games.listByDate[fechaParaAgrupar] === undefined){
+			        games.listByDate[fechaParaAgrupar] = []; 
+			        games.listByDate[fechaParaAgrupar]
 			        // games.listByDate[obj.fixture_date]
 			    }
 			    var game = {};
@@ -36,12 +43,11 @@
 			    game.kick_off_gmt = new Date(obj.kick_off_gmt+' UTC');
 			    game.sFullAwayTeam = obj.sFullAwayTeam;
 			    game.sFullHomeTeam = obj.sFullHomeTeam;
-			    //x will always be the array corresponding to the current DtmStamp. Push a value the current value to it.
-			    games.listByDate[obj.fixture_date].push(game);
+			    games.listByDate[fechaParaAgrupar].push(game);
 			}
 
 			$timeout(function() {
-
+				// lo ejecuto en timeout 
 				$('.collapsible').collapsible({
 					accordion: true
 				});
