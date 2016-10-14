@@ -1,0 +1,23 @@
+{
+  "name": "sopitas-pl",
+  "version": "1.0.0",
+  "description": "App para escuchar la premier league en vivo",
+  "main": "index.js",
+  "dependencies": {
+    "angular-web-notification": "^1.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batch11-premier-league/sopitas-pl.git"
+  },
+  "author": "Manuel Comi y Daniel Rogel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/batch11-premier-league/sopitas-pl/issues"
+  },
+  "homepage": "https://github.com/batch11-premier-league/sopitas-pl#readme"
+}

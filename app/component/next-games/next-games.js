@@ -47,7 +47,7 @@
 			}
 
 			$timeout(function() {
-				// lo ejecuto en timeout 
+				// lo ejecuto en timeout porque el DOM no renderea mis elementos en ng-repeat y no añade la clase active al primer elemento
 				$('.collapsible').collapsible({
 					accordion: true
 				});

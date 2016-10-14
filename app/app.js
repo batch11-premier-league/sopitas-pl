@@ -2,5 +2,5 @@
 	'use strict';
 
 	angular
-		.module('sopitasApp', ['ngRoute', 'ngResource']);
+		.module('sopitasApp', ['ngRoute', 'ngResource', 'ngDesktopNotification']);
 })();
