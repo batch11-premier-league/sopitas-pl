@@ -331,3 +331,60 @@ nav {
     90%  { opacity: .90}
     100% { opacity: 1.0}
 }
+.opta-widget-container .optafacts li {
+  padding:8px 8px 8px 22px;
+  color:#4f5155;
+}
+.alert-team {
+  color:#ed1c24;
+  font-weight:bold;
+}
+.goal {
+  background-image:url(/img/goal.png);
+  background-repeat:no-repeat;
+  /*background-position:-5px -173px;*/
+  display:inline-block;
+  width:12px;
+  height:12px;
+  margin:0 0 0 10px;
+  padding:0 10px;
+  line-height:3;
+  overflow:hidden;
+}
+.substitution-icon {
+  background-image:url(/img/icon-substitution.png);
+  background-repeat:no-repeat;
+  /*background-position:-5px -368px;*/
+  display:inline-block;
+  width:12px;
+  height:10px;
+  margin:0 10px 0 10px;
+  overflow:hidden;
+}
+.yellow-card {
+  background-image:url(/img/yellow-card.png);
+  background-repeat:no-repeat;
+  /*background-position:-5px -64px;*/
+  display:inline-block;
+  width:11px;
+  height:15px;
+  margin:0 0 0 10px;
+  padding:0 10px;
+  line-height:3;
+  overflow:hidden;
+}
+.red-card {
+  background-image:url(/img/red-card.png);
+  background-repeat:no-repeat;
+  /*background-position:-5px -44px;*/
+  display:inline-block;
+  width:11px;
+  height:15px;
+  margin:0 0 0 10px;
+  padding:0 10px;
+  line-height:3;
+  overflow:hidden;
+}
+/*.centrado{
+  text-align: center;
+}*/
