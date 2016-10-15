@@ -31,7 +31,6 @@
 			for (var i = 0; i < data.length; ++i) {
 			    var obj = data[i];
 			    var fechaParaAgrupar = chageFormatDate(obj.fixture_date);
-			    console.log(obj.fixture_date);
 			    //If a property for this DtmStamp does not exist yet, create
 			    if (games.listByDate[fechaParaAgrupar] === undefined){
 			        games.listByDate[fechaParaAgrupar] = []; 

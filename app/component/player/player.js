@@ -10,8 +10,10 @@
 		.module('sopitasApp')
 		.component('player', player)
 
-	function playerCtrl () {
+	playerCtrl.$inject = ['$timeout']
+	function playerCtrl ($timeout) {
 		var player = this;
+		player.pushtapePlayer = new PushtapePlayer();
 
 		player.play = false;
 		var audio = new Audio('http://audio.talksport.com/ondemand/talkSPORT-Live-20161001-142122.mp3');
@@ -25,6 +27,41 @@
 		        audio.pause();
 			}
 	    };
+
+	    /**
+		* Setup the Pushtape Player
+		*/
+		var pushtapePlayer = null; // Instance
+
+		soundManager.setup({
+			debugMode: true,   // disable or enable debug output
+			url: './assets/swf/',       // path to directory containing SM2 SWF
+			useHighPerformance: true, // keep flash on screen, boost performance
+			preferFlash: true, // for visualization effects (smoother scrubber)
+			flashVersion: 9,
+			wmode: 'transparent', // transparent SWF, if possible
+			onready: function() {
+				// Initialize pushtape player when SM2 is ready
+				$timeout(function() {
+					player.pushtapePlayer.init({
+						playNext: true, // stop after one sound, or play through list until end
+						autoPlay: false,  // start playing the first sound right away
+						repeatAll: false, // repeat playlist after last track
+						containerClass : 'links',
+
+					});
+
+
+				}, 2000);
+
+				
+				
+			},
+			ontimeout: function() {
+				// Could not start. Missing SWF? Flash blocked? Show an error, etc.?
+				console.log('Error initializing the Pushtape player.');
+			}  
+		});
 	}
 
 })()

@@ -2,12 +2,12 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-11 00:49:42
+* @Last Modified time: 2016-10-14 21:22:42
 */
 /* Font Family
 ================================================== */
 
-@import url("http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400");
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400");
 
 
 html {
@@ -330,4 +330,8 @@ nav {
     80%  { opacity: .80}
     90%  { opacity: .90}
     100% { opacity: 1.0}
+}
+
+.links {
+  display: none;
 }
