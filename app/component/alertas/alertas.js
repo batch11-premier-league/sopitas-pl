@@ -17,6 +17,7 @@
 		alert.showAlert = showAlert;
 
 		apiAlerts.get().$promise.then(function(response) {
+			console.log(response.data);
 			var data = PHPUnserialize.unserialize(response.data.alerts);
             for(var i in data) {
             	
@@ -24,6 +25,7 @@
             	
             }
             alert.data = data;
+            console.log(data);
             // team.data.image_small = team.data.image_small.replace(/amp;/g, '');
             });
 
