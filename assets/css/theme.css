@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-14 21:44:23
+* @Last Modified time: 2016-10-15 10:59:07
 */
 /* Font Family
 ================================================== */
@@ -36,6 +36,10 @@ a {
       height: 105px;
       line-height: 105px;
   }
+}
+
+.match {
+  padding: 20px 10px;
 }
 
 .collection .collection-item span.home .circle {
