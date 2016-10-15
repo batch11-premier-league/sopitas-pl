@@ -1,9 +1,15 @@
-<ol>
-<div class="" ng-repeat="alerta in $ctrl.data">
 
-  <li ng-bind-html="alerta.alert_message"></li>
+  <img ng-src="/img/{{$ctrl.local}}.png" width="15px" height="15px">
+  VS
+  <img ng-src="/img/{{$ctrl.visit}}.png" width="15px" height="15px">
+  
+  <img ng-src="/img/{{$ctrl.data.home_team}}.png" width="15px" height="15px">
+  VS
+  <img ng-src="/img/{{$ctrl.data.away_team}}.png" width="15px" height="15px">
+	<ol>
+		<div class="" ng-repeat="alerta in $ctrl.data">
+		  <li ng-bind-html="alerta.alert_message"></li>
+		</div>
+	</ol>
 
-<!-- 	<div ng-bind-html="alerta.alert_message"></div> -->
-</div>
-</ol>
 <button class="waves-effect waves-light btn" ng-click="$ctrl.showAlert()">Enviar alerta</button>
