@@ -19,8 +19,6 @@
 		alert.showAlert = showAlert;
 
 		apiAlerts.get().$promise.then(function(response) {
-			// console.log(response.data);
-			// console.log('equipos');
 			alert.local=response.data.home_team;
             alert.visit=response.data.away_team;
 			var data = PHPUnserialize.unserialize(response.data.alerts);
@@ -28,9 +26,6 @@
             	data[i].alert_message = $sce.trustAsHtml(data[i].alert_message);            	
             }
             alert.data = data;
-            // console.log(alert.data);
-            // console.log(alert.local);
-            // console.log(alert.visit);
             // team.data.image_small = team.data.image_small.replace(/amp;/g, '');
             });
 

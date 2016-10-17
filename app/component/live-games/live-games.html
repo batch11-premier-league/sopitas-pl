@@ -1,65 +1,76 @@
 
-<div class="row" ng-if="$ctrl.live.length > 0">
-<h2 class="header">Partidos en Vivo</h2>
-  <div class="card-panel col m6" ng-repeat="game in $ctrl.live">  
+<div class="row matches">
+  <h4>Partidos</h4>  
+  <div class="col m6 s12" ng-show="$ctrl.live.length > 0 || $ctrl.next.length > 0">
+    
+    <div class="card-panel" ng-show="$ctrl.live.length > 0">
 
-          
-          <div class="match">
-            <div class="match-header">
-              <div class="logo-name-1">
-                {{ game.sFullAwayTeam }}
-              </div>
-              <div class="logo-name-2">
-                {{ game.sFullHomeTeam }}
-              </div>
-            </div>
-            <div class="match-info">
-              <div class="home-team">
-                <img ng-src="/img/{{game.home_team_opta_id}}.png" alt="">
-              </div>
-              <div class="game-info">
-                <h3>{{ game.home_score }} - {{ game.away_score }}</h3>
-                <p>{{ game.period }}</p>
-              </div>
-              <div class="away-team">
-                <img ng-src="/img/{{game.away_team_opta_id}}.png" alt="">
-              </div>
-            </div>
-          </div>
-       <ul class="links">
-          <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
-      </ul>
-   </div>
-</div>
-<div class="row" ng-if="$ctrl.full.length > 0">
-<h2 class="header">Partidos finalizados</h2>
-  <div class="card-panel col m6" ng-repeat="game in $ctrl.full">  
+      <table class="striped centered">
+        <thead class="match-header">
+          <th colspan="5">En Vivo</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="game in $ctrl.live">
+            <td>{{ game.sFullHomeTeam }}</td>
+            <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+            <td>{{ game.home_score }} - {{ game.away_score }}</td>
+            <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+            <td>{{ game.sFullAwayTeam }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="links">
+            <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
+        </ul>
+    </div>
 
-          
-          <div class="match">
-            <div class="match-header">
-              <div class="logo-name-1">
-                {{ game.sFullAwayTeam }}
-              </div>
-              <div class="logo-name-2">
-                {{ game.sFullHomeTeam }}
-              </div>
-            </div>
-            <div class="match-info">
-              <div class="home-team">
-                <img ng-src="/img/{{game.home_team_opta_id}}.png" alt="">
-              </div>
-              <div class="game-info">
-                <h3>{{ game.home_score }} - {{ game.away_score }}</h3>
-                <p>{{ game.period }}</p>
-              </div>
-              <div class="away-team">
-                <img ng-src="/img/{{game.away_team_opta_id}}.png" alt="">
-              </div>
-            </div>
-          </div>
-       <ul class="links">
-          <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
-      </ul>
-   </div>
+    <div class="card-panel" ng-show="$ctrl.next.length > 0">
+
+      <table class="striped centered">
+        <thead class="match-header">
+          <th colspan="5">Por comenzar</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="game in $ctrl.next">
+            <td>{{ game.sFullHomeTeam }}</td>
+            <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+            <td>{{ game.home_score }} - {{ game.away_score }}</td>
+            <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+            <td>{{ game.sFullAwayTeam }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="links">
+            <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="col m6 s12" ng-show="$ctrl.full.length > 0">
+    
+    <div class="card-panel">
+
+      <table class="striped centered">
+        <thead class="match-header">
+          <th colspan="5">Últimos resultados</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="game in $ctrl.full">
+            <td>{{ game.sHomeTeam }}</td>
+            <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+            <td>{{ game.home_score }} - {{ game.away_score }}</td>
+            <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+            <td>{{ game.sAwayTeam }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="links">
+            <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
+        </ul>
+    </div>
+  </div>
 </div>

@@ -594,7 +594,7 @@ function PushtapePlayer () {
     }
     thisSound = sm.createSound({
       id: soundID,
-      url:o.href,
+      url:'http://live.talksport.com/channel1m-es?awparams=platform:part-moshen;lang:es&amsparams=playerid:part-moshen;skey:',//o.href,
       autoPlay: false,
       onplay:self.events.play,
       onstop:self.events.stop,

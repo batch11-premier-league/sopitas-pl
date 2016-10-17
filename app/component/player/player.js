@@ -28,10 +28,7 @@
 			}
 	    };
 
-	    /**
-		* Setup the Pushtape Player
-		*/
-		var pushtapePlayer = null; // Instance
+	   
 
 		soundManager.setup({
 			debugMode: true,   // disable or enable debug output
@@ -47,7 +44,6 @@
 						playNext: true, // stop after one sound, or play through list until end
 						autoPlay: false,  // start playing the first sound right away
 						repeatAll: false, // repeat playlist after last track
-						containerClass : 'links',
 
 					});
 

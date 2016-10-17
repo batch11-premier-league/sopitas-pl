@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-15 10:59:07
+* @Last Modified time: 2016-10-16 11:30:29
 */
 /* Font Family
 ================================================== */
@@ -62,9 +62,22 @@ a {
     vertical-align: middle;
 }
 
+.matches img {
+  width: auto;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.matches .card-panel {
+  padding: 0 0;
+}
+
+.matches.header {
+  font-size:1.4 rem;
+}
+
 .match-header {
-  display: flex;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 300;
 }
 
@@ -168,11 +181,10 @@ nav {
 }
 
 /* Hide/Show */
-// .pause-btn,
-// .pt-play-pause.pt-playing .play-btn {
-//   display:none;
-// } 
-
+.pause-btn,
+.pt-play-pause.pt-playing .play-btn {
+  display:none;
+} 
 .pt-play-pause.pt-playing .pause-btn {
   display:inline-block;
 }
@@ -336,9 +348,7 @@ nav {
     100% { opacity: 1.0}
 }
 
-.links {
-  display: none;
-}
+
 
 .opta-widget-container .optafacts li {
   padding:8px 8px 8px 22px;

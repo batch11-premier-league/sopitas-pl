@@ -10,6 +10,7 @@
         .factory('apiAlerts', apiAlerts)
         .factory('apiLiveGames', apiLiveGames)
         .factory('apiLivestream', apiLivestream)
+        .factory('apiLastResults', apiLastResults)
 
 	apiTeam.$inject = ["$resource"];
 
@@ -56,10 +57,15 @@
         return $resource('http://api.talksport.com/api/fixture/?method=getList&fixture_date='+today+'&sport_id=1&tournament_id=8&season_id=2016&hsh=255310244028f29f0d79b2581a4450cc&app_id=mshndevmkt')
     }
 
+    apiLastResults.$inject = ['$resource'];
+    function apiLastResults($resource){
+        return $resource('http://talksport.com/api/fixture/?method=getResults&sport_id=1&tournament_id=8&season_id=2016&hsh=c178aa4d845d75c676574e370b2d8f0c&app_id=mshndevmkt&day_limit=7')
+    }
+
     apiLivestream.$inject = ['$resource'];
-    function apiLivestream ($resource, optaId) {
+    function apiLivestream ($resource) {
         var optaId = optaId
-        return $resource('http://talksport.com/api/audio/?method=getLiveStream&opta_id= '+optaId+'&lang=es&hsh=38bdf407e9915b72785b0412fc21b418&app_id=mshndevmkt')
+        return $resource('http://talksport.com/api/audio/?method=getLiveStream&opta_id=:optaId&lang=es&hsh=38bdf407e9915b72785b0412fc21b418&app_id=mshndevmkt', { optaId : '@_opta_id' })
     }    
 
     apiAlerts.$inject = ['$resource'];
