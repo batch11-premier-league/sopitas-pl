@@ -11,13 +11,9 @@
         .factory('apiLiveGames', apiLiveGames)
         .factory('apiLivestream', apiLivestream)
         .factory('apiLastResults', apiLastResults)
+        .factory('apiAudioRepeat', apiAudioRepeat)
 
 	apiTeam.$inject = ["$resource"];
-
-	var team_id = 1;
-	
-	
-
     function apiTeam($resource){   	
     	var app_id = 'mshndevmkt';
     	var hsh = '823fa80840a88fb26ecb56eaf68250e5';
@@ -64,9 +60,13 @@
 
     apiLivestream.$inject = ['$resource'];
     function apiLivestream ($resource) {
-        var optaId = optaId
         return $resource('http://talksport.com/api/audio/?method=getLiveStream&opta_id=:optaId&lang=es&hsh=38bdf407e9915b72785b0412fc21b418&app_id=mshndevmkt', { optaId : '@_opta_id' })
-    }    
+    }  
+
+    apiAudioRepeat.$inject = ['$resource'];
+    function apiAudioRepeat ($resource) {
+        return $resource('http://talksport.com/api/audio/?method=getFull&opta_id=:optaId&lang=es&hsh=9d5f6a17d1851a1080d0565171f17329&app_id=mshndevmkt', { optaId : '@_opta_id' })
+    }
 
     apiAlerts.$inject = ['$resource'];
     function apiAlerts ($resource) {

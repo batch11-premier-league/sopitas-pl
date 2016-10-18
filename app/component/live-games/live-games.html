@@ -1,5 +1,5 @@
 
-<div class="row matches">
+<div class="matches">
   <h4>Partidos</h4>  
   <div class="col m6 s12" ng-show="$ctrl.live.length > 0 || $ctrl.next.length > 0">
     
@@ -7,7 +7,7 @@
 
       <table class="striped centered">
         <thead class="match-header">
-          <th colspan="5">En Vivo</th>
+          <th colspan="6">En Vivo</th>
           <th></th>
         </thead>
         <tbody>
@@ -17,13 +17,11 @@
             <td>{{ game.home_score }} - {{ game.away_score }}</td>
             <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
             <td>{{ game.sFullAwayTeam }}</td>
-            <td></td>
+            <td><a class="pt-playable" href="{{ game.audio }}" title="{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}"><div class="chip">Escuchar<div></a></td>
           </tr>
         </tbody>
       </table>
-      <ul class="links">
-            <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
-        </ul>
+      
     </div>
 
     <div class="card-panel" ng-show="$ctrl.next.length > 0">
@@ -39,13 +37,11 @@
             <td>{{ game.home_score }} - {{ game.away_score }}</td>
             <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
             <td>{{ game.sFullAwayTeam }}</td>
-            <td></td>
+            <td><a class="pt-playable" href="{{ game.audio }}" title="{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}"><div class="chip">Escuchar<div></a></td>
           </tr>
         </tbody>
       </table>
-      <ul class="links">
-            <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
-        </ul>
+      
     </div>
   </div>
 
@@ -64,13 +60,11 @@
             <td>{{ game.home_score }} - {{ game.away_score }}</td>
             <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
             <td>{{ game.sAwayTeam }}</td>
-            <td></td>
+            <td ng-if="game.audio"><a class="pt-playable" href="{{ game.audio }}" title="{{ game.sHomeTeam }}  {{ game.home_score }} - {{ game.away_score }} {{ game.sAwayTeam }}"><div class="chip">Escuchar<div></a></td>
+            <td ng-if="!game.audio"><div class="chip">No disponible<div></td>
           </tr>
         </tbody>
       </table>
-      <ul class="links">
-            <li class="first"><a class="pt-playable" href="{{ link }}">{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}</a></li>
-        </ul>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-16 11:30:29
+* @Last Modified time: 2016-10-17 21:02:32
 */
 /* Font Family
 ================================================== */
@@ -249,46 +249,46 @@ nav {
   font-size:1.7em;
   margin-top:-.5em;
 }
-.links {
-  clear:both;
-  margin:0;
-  padding:0;
-  list-style-type:none;
-  font-size:1.1em;
-}
-.links a {
-  display:block;
-  padding:1em;
-  border-bottom:solid 1px #EEE;
-}
-.links li.last a {
-  border-bottom:none;
-}
-.links a:hover,
-.links a.pt-playing, 
-.links a.pt-paused {
-  background:#FBFBEF;
-}
-.pt-link.pt-loading { opacity:.2;}
-.pt-link.pt-playing { opacity: 1; font-weight:bold;}
-.pt-link.pt-paused  { opacity:.5; font-weight:bold;}
-.pt-link.pt-cue { color:red;}
+// .links {
+//   clear:both;
+//   margin:0;
+//   padding:0;
+//   list-style-type:none;
+//   font-size:1.1em;
+// }
+// .links a {
+//   display:block;
+//   padding:1em;
+//   border-bottom:solid 1px #EEE;
+// }
+// .links li.last a {
+//   border-bottom:none;
+// }
+// .links a:hover,
+// .links a.pt-playing, 
+// .links a.pt-paused {
+//   background:#FBFBEF;
+// }
+// .pt-link.pt-loading { opacity:.2;}
+// .pt-link.pt-playing { opacity: 1; font-weight:bold;}
+// .pt-link.pt-paused  { opacity:.5; font-weight:bold;}
+// .pt-link.pt-cue { color:red;}
 
 /** Not sure if loading in Font Awesome icons this way will break in certain
   *  browsers, but going for it.
   *  See: http://fortawesome.github.io/Font-Awesome/cheatsheet
   */
 .pt-link:before {
-  font-family:FontAwesome;
-  content: '\f04b ';
-  padding-right:.3em;
-  padding-left:.5em;
+  // font-family:FontAwesome;
+  // content: '\f04b ';
+  // padding-right:.3em;
+  // padding-left:.5em;
 }
 .pt-link.pt-playing:before {
-  font-family:FontAwesome;
-  content: '\f04c ';
-  padding-right:.3em;
-  padding-left:.5em;
+  // font-family:FontAwesome;
+  // content: '\f04c ';
+  // padding-right:.3em;
+  // padding-left:.5em;
 }
 
 .pt-controls-wrapper {
@@ -403,4 +403,9 @@ nav {
   padding:0 10px;
   line-height:3;
   overflow:hidden;
+}
+.next-games {
+    max-height: 1100px;
+    height: 1000px;
+    overflow: scroll;
 }

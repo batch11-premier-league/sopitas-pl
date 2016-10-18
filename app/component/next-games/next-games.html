@@ -1,20 +1,24 @@
-<h5>Próximos partidos</h5>
-<ul class="collapsible popout collapsible-accordion" data-collapsible="accordion">
-    <li ng-repeat="(date, games) in $ctrl.listByDate" ng-class="{'active':$first}">
-        <div class="collapsible-header" ng-class="{'active': $first}"><i class="large material-icons">today</i>
-            <h5>{{ date }}</h5>
-        </div>
-        <div class="collapsible-body">
-            <table class="striped centered">
-                <tbody>
-                    <tr ng-repeat="game in games">
-                        <td>{{ game.sFullHomeTeam }}</td>
-                        <td>VS</td>
-                        <td>{{ game.sFullAwayTeam }}</td>
-                        <td>{{ game.kick_off_gmt | date:'shortTime' }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </li>
-</ul>
+<div class="next-games">
+    <h5>Próximos partidos</h5>
+    <ul class="collapsible popout collapsible-accordion" data-collapsible="accordion">
+        <li ng-repeat="(date, games) in $ctrl.listByDate" ng-class="{'active':$first}">
+            <div class="collapsible-header" ng-class="{'active': $first}"><i class="large material-icons">today</i>
+                <h5>{{ date }}</h5>
+            </div>
+            <div class="collapsible-body">
+                <table class="striped centered">
+                    <tbody>
+                        <tr ng-repeat="game in games">
+                            <td>{{ game.sFullHomeTeam }}</td>
+                            <td>VS</td>
+                            <td>{{ game.sFullAwayTeam }}</td>
+                            <td>{{ game.kick_off_gmt | date:'shortTime' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+    </ul>
+</div>
+    
+
