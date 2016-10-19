@@ -16,7 +16,6 @@
 		alert.alertas = [];
 		alert.local=0;
 		alert.visit=0;
-		alert.showAlert = showAlert;
 
 		apiAlerts.get().$promise.then(function(response) {
 			alert.local=response.data.home_team;
@@ -29,18 +28,7 @@
             // team.data.image_small = team.data.image_small.replace(/amp;/g, '');
             });
 
-		function showAlert () {
-			desktopNotification.requestPermission().then(function (permission) {
-				  // User allowed the notification
-				  desktopNotification.show('Hello', {
-				    body: 'I am an HTML5 notification',
-				    onClick: function () {
-				      // Handle click event
-				    }
-				  });
-				
-            });
-		}
+		
 
 		
 	}

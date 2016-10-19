@@ -1,10 +1,13 @@
-<h5>Tabla de Posiciones</h5>
-    
-    
+
+   <div class="positions"> 
     <div class="card-panel">
+        <div class="card-header positions">
+        <img src="./assets/img/logo-pl-white.png" alt="sopitas.com logo" height="105px">
+        <h4 class="centered">Tabla de posiciones</h4>
+      </div>
         <table class="highlight ">
             <thead>
-                <tr>
+                <tr class="item-positions">
                     <th data-field="id">#</th>
                     <th data-field="name"></th>
                     <th data-field="name">Equipo</th>
@@ -19,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="team in $ctrl.data">                        
+                <tr class="item-positions" ng-repeat="team in $ctrl.data">                        
                     <td>{{team.position}}</td>
                     <td class="badge"> <img ng-src="/img/{{team.team_id}}.png" width="15px" height="15px">
                     </td>
@@ -36,4 +39,5 @@
             </tbody>
         </table>
     </div>
+</div>
 

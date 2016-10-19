@@ -10,15 +10,17 @@
         .module('sopitasApp')
         .component('liveGames', liveGames);
 
-    liveGamesCtrl.$inject = ['apiLiveGames', 'apiLivestream', 'apiLastResults', 'apiAudioRepeat', '$timeout','$interval']
+    liveGamesCtrl.$inject = ['apiLiveGames', 'apiLivestream', 'apiLastResults', 'apiAudioRepeat', '$timeout','$interval','desktopNotification']
 
-    function liveGamesCtrl(apiLiveGames, apiLivestream, apiLastResults, apiAudioRepeat, $timeout, $interval) {
+    function liveGamesCtrl(apiLiveGames, apiLivestream, apiLastResults, apiAudioRepeat, $timeout, $interval, desktopNotification) {
         var games = this;
         games.live = [];
         games.full = [];
         games.next = [];
         games.db = null;
         var interval = null
+        games.showAlert = showAlert;
+        games.writeGamesData = writeGamesData;
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyBOEd731xsw1BDs0SiP_nu8rdxQoG63DSc",
@@ -35,9 +37,35 @@
             firebase.database().ref('games/').set(games);
         }
 
-        var alertRef = firebase.database().ref('games/0');
+        var gameRef = firebase.database().ref('games').child(0);
+
+
+		gameRef.once('value', function(snapshot) {
+
+	    if( snapshot.val() === null ) {
+	        /* does not exist */
+	    } else {
+	    	console.log(snapshot.val());
+	        snapshot.ref().update({"away_score": 1});
+	    }
+
+	});
+        var countUpdates = 0;
+        var alertRef = firebase.database().ref('games/1');
+        var messageNotification = null
+        var gameUpdate = null
         alertRef.on('value', function(snapshot) {
-            console.log(snapshot.val());
+            if(countUpdates === 0){
+            	countUpdates++
+            	messageNotification = 'Gracias por escucharnos, disfruta los partidos en vivo'
+            }else{
+            	gameUpdate = snapshot.val()
+            	messageNotification = gameUpdate.sHomeTeams+' '+gameUpdate.home_score+' - '+gameUpdate.away_score+' '+gameUpdate.AwayTeam
+            }
+            console.log(snapshot.val())
+            // gameUpdate.away_score
+            // gameUpdate.home_score
+            games.showAlert()
         });
 
         getLastResults();
@@ -104,6 +132,20 @@
                 console.log('Error al buscar los últimos resultados');
             });
         }
+
+        function showAlert () {
+			desktopNotification.requestPermission().then(function (permission) {
+				  // User allowed the notification
+				  desktopNotification.show('Gol', {
+				  	icon: './img/sopitas-icon.png',
+				    body: messageNotification,
+				    onClick: function () {
+				      // Handle click event
+				    }
+				  });
+				
+            });
+		}
 
 
     }

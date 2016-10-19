@@ -835,7 +835,6 @@ function PushtapePlayer () {
             if (self.config.linkClass.length <= 0 || self.hasClass(oLinks[i], self.config.linkClass)) {
               self.addClass(oLinks[i], self.css.sDefault); // add default CSS decoration
               self.links[foundItems] = oLinks[i];
-              console.log(oLinks[i]);
               /**
                 * We use a unique HTML data-attribute to relate each link to appropriate sound index.
                 * When link is clicked, we use this to play the right sound on the page - without it, we'd have 

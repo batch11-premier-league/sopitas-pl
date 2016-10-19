@@ -1,14 +1,14 @@
 
 <div class="matches">
-  <h4>Partidos</h4>  
   <div class="col m6 s12" ng-show="$ctrl.live.length > 0 || $ctrl.next.length > 0">
     
     <div class="card-panel" ng-show="$ctrl.live.length > 0">
-
+      <div style="width: 100%; height: 100px; background-color: #e90052; border-radius: 20px 20px 0 0;">
+        
+      </div>
       <table class="striped centered">
         <thead class="match-header">
           <th colspan="6">En Vivo</th>
-          <th></th>
         </thead>
         <tbody>
           <tr ng-repeat="game in $ctrl.live">
@@ -25,10 +25,11 @@
     </div>
 
     <div class="card-panel" ng-show="$ctrl.next.length > 0">
-
+      
+      <div style="width: 100%; height: 100px; background-color: #e90052; border-radius: 20px 20px 0 0;"></div>
       <table class="striped centered">
         <thead class="match-header">
-          <th colspan="5">Por comenzar</th>
+          <th colspan="6">Por comenzar</th>
         </thead>
         <tbody>
           <tr ng-repeat="game in $ctrl.next">
@@ -45,14 +46,21 @@
     </div>
   </div>
 
-  <div class="col m6 s12" ng-show="$ctrl.full.length > 0">
+  <div ng-show="$ctrl.full.length > 0">
     
     <div class="card-panel">
-
+      <div class="card-header">
+        <img src="./assets/img/logo-pl-white.png" alt="sopitas.com logo" height="105px">
+        <h4 class="centered">Partidos</h4>
+        <ul class="tabs">
+          <li class="tab col s3"><a href="#test1">Últimos resultados</a></li>
+          <li class="tab col s3"><a class="active" href="#test2">Próximamente</a></li>
+        </ul>
+      </div>
       <table class="striped centered">
-        <thead class="match-header">
-          <th colspan="5">Últimos resultados</th>
-        </thead>
+        <!-- <thead class="match-header">
+          <th colspan="6"></th>
+        </thead> -->
         <tbody>
           <tr ng-repeat="game in $ctrl.full">
             <td>{{ game.sHomeTeam }}</td>
