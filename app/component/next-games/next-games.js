@@ -50,7 +50,7 @@
 				$('.collapsible').collapsible({
 					accordion: true
 				});
-				
+				$('ul.tabs').tabs();
 			}, 10);
             })
         

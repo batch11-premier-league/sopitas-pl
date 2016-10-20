@@ -2,13 +2,10 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-19 23:42:50
+* @Last Modified time: 2016-10-20 15:52:47
 */
 /* Font Family
 ================================================== */
-
-@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400");
-
 
 html {
   width:100%;
@@ -22,11 +19,13 @@ body {
   /* With fixed position element, need to pass through width and height settings and adjust margin to allow for overlapping*/
   width:100%;
   margin-bottom:140px; /* Roughly the height of the controls*/
+  background-color: #ECEFF3;
 }
 a {
   color:#0061b0;
   text-decoration:none;
 }
+
 @media only screen and (min-width: 601px){
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
       height: 105px;
@@ -38,7 +37,9 @@ a {
       height: 105px;
       line-height: 105px;
   }
+
 }
+
 
 nav {
     color: #fff;
@@ -47,7 +48,7 @@ nav {
     
 }
 .row {
-  background-color: #ECEFF3;
+  
   padding-top: 15px;
 }
 .match {
@@ -103,14 +104,14 @@ nav {
 }
 .card-header {
   width: 100%; 
-  height: 138px; 
+  /*height: 138px; */
   background-color: #e90052; 
   border-radius: 20px 20px 0 0;
   padding-top: 20px;
 }
 
 .card-header.positions {
-  height: 90px; 
+  min-height: 90px; 
 }
 
 .card-header img {
@@ -222,6 +223,10 @@ table.striped>tbody>tr:nth-child(odd) {
     
 }
 
+.tabs .indicator {
+     background-color: transparent; 
+}
+
 .fa {
   color: #e2ca46;
 }
@@ -237,20 +242,28 @@ table.striped>tbody>tr:nth-child(odd) {
     background-color: white;
     border-radius: 15px 15px 0 0;
 }
-.tabs .tab a.active {
+.tabs .tab a {
     background-color: #c1104f;
     color: white;
 }
-.tabs .tab a {
+.tabs .tab a.active {
+    background-color: white;
     color: #333;
 }
 
 
 @media only screen and (max-width: 992px){
-  nav .brand-logo{
-      left: 5%;
-      -webkit-transform: translateX(-5%);
-      transform: translateX(-5%);
+  nav {
+    height: 65px;
+    line-height: 65px;
+  }
+  nav .brand-logo.pl {
+    left: 0;
+    -webkit-transform: translateX(0%); 
+    transform: translateX(0%);
+  }
+  .brand-logo img{
+      height: 65px;
   }
   nav .brand-logo.center {
     right: 5%;
@@ -259,30 +272,9 @@ table.striped>tbody>tr:nth-child(odd) {
   }
 }
 
-@media only screen and (max-width: 460px){
-  .brand-logo img{
-      max-width: 100px;
-      height: auto;
-      vertical-align: middle;
-  }
-  nav {
-    height: 65px;
-    line-height: 65px;
-  }
-}
 
-.pt-previous,
-.pt-next {
-  font-size:1.5em;
-  float:right;
-  margin-left:.5em;
-}
-.pt-play-pause {
-    left: 4%;
-    bottom: 3px;
-    position: absolute;
-    font-size: 5rem;
-}
+
+
 
 /* Hide/Show */
 .pause-btn,
@@ -293,12 +285,7 @@ table.striped>tbody>tr:nth-child(odd) {
   display:inline-block;
 
 }
-.pause-btn {
-  position:relative;
-  left:-4px;
-  top:-2px;
-  letter-spacing:-.005em;
-}
+
 .pt-scrubber {
   margin-bottom: 0.5em;
   margin-top: 1em;
@@ -354,59 +341,7 @@ table.striped>tbody>tr:nth-child(odd) {
   font-size:1.7em;
   margin-top:-.5em;
 }
-// .links {
-//   clear:both;
-//   margin:0;
-//   padding:0;
-//   list-style-type:none;
-//   font-size:1.1em;
-// }
-// .links a {
-//   display:block;
-//   padding:1em;
-//   border-bottom:solid 1px #EEE;
-// }
-// .links li.last a {
-//   border-bottom:none;
-// }
-// .links a:hover,
-// .links a.pt-playing, 
-// .links a.pt-paused {
-//   background:#FBFBEF;
-// }
-// .pt-link.pt-loading { opacity:.2;}
-// .pt-link.pt-playing { opacity: 1; font-weight:bold;}
-// .pt-link.pt-paused  { opacity:.5; font-weight:bold;}
-// .pt-link.pt-cue { color:red;}
 
-// /** Not sure if loading in Font Awesome icons this way will break in certain
-//   *  browsers, but going for it.
-//   *  See: http://fortawesome.github.io/Font-Awesome/cheatsheet
-//   */
-// .pt-link:before {
-//   font-family:FontAwesome;
-//   content: '\f04b ';
-//   padding-right:.3em;
-//   padding-left:.5em;
-// }
-// .pt-link.pt-playing:before {
-//   font-family:FontAwesome;
-//   content: '\f04c ';
-//   padding-right:.3em;
-//   padding-left:.5em;
-// }
-
-.pt-controls-wrapper {
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  // padding:1% 2%;
-  padding: 1% 2% 1% 10%;
-  border-top:solid 1px #6e4872;
-  background: rgba(100,72,114,.9);
-  color:#FFF;
-}
 
 .filler {
   line-height:1.7em;
@@ -454,6 +389,70 @@ table.striped>tbody>tr:nth-child(odd) {
     100% { opacity: 1.0}
 }
 
+
+
+  .pt-previous,
+.pt-next {
+  font-size:1.5em;
+  float:right;
+  margin-left:.5em;
+}
+.pt-play-pause {
+    left: 6%;
+    bottom: 3.5px;
+    position: absolute;
+    font-size: 5rem;
+}
+.pause-btn {
+  position:relative;
+  left:-4px;
+  top:-2px;
+  letter-spacing:-.005em;
+}
+.pt-controls-wrapper {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  // padding:1% 2%;
+  padding: 1% 2% 1% 13%;
+  border-top:solid 1px #6e4872;
+  background: rgba(100,72,114,.9);
+  color:#FFF;
+}
+
+@media only screen and (max-width: 992px) and (min-width: 461px){
+  .pt-play-pause {
+    left: 5%;
+    font-size: 4.5rem;
+    bottom: 2px;
+  }
+  .pt-controls-wrapper {
+    padding: 1% 5% 1% 15%;
+  }
+}
+
+
+@media only screen and (max-width: 460px){
+  
+  
+  
+  .tabs .tab a {
+     font-size: 0.8em;
+  }
+  a {
+    font-size: 0.8em;
+  }
+  .pt-play-pause {
+    font-size: 4rem;
+  }
+  .pt-controls-wrapper {
+    padding: 1% 5% 1% 20%;
+  }
+  .pt-current-track-title { 
+    font-size: 1.3em;
+  }
+}
 
 
 .opta-widget-container .optafacts li {
@@ -514,4 +513,27 @@ table.striped>tbody>tr:nth-child(odd) {
     max-height: 1100px;
     height: 1000px;
     overflow: scroll;
+}
+
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+}
+.no-data {
+  min-height: 500px;
+}
+
+@media only screen and (min-width: 1280px){
+  .row  {
+      width: 1280px;
+      margin-left: auto;
+      left: auto;
+      right: auto;
+  }
 }

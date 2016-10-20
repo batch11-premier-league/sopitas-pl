@@ -1,78 +1,58 @@
-
 <div class="matches">
-  <div class="col m6 s12" ng-show="$ctrl.live.length > 0 || $ctrl.next.length > 0">
-    
-    <div class="card-panel" ng-show="$ctrl.live.length > 0">
-      <div style="width: 100%; height: 100px; background-color: #e90052; border-radius: 20px 20px 0 0;">
-        
-      </div>
-      <table class="striped centered">
-        <thead class="match-header">
-          <th colspan="6">En Vivo</th>
-        </thead>
-        <tbody>
-          <tr ng-repeat="game in $ctrl.live">
-            <td>{{ game.sFullHomeTeam }}</td>
-            <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
-            <td>{{ game.home_score }} - {{ game.away_score }}</td>
-            <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
-            <td>{{ game.sFullAwayTeam }}</td>
-            <td><a class="pt-playable" href="{{ game.audio }}" title="{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}"><div class="chip">Escuchar<div></a></td>
-          </tr>
-        </tbody>
-      </table>
-      
-    </div>
-
-    <div class="card-panel" ng-show="$ctrl.next.length > 0">
-      
-      <div style="width: 100%; height: 100px; background-color: #e90052; border-radius: 20px 20px 0 0;"></div>
-      <table class="striped centered">
-        <thead class="match-header">
-          <th colspan="6">Por comenzar</th>
-        </thead>
-        <tbody>
-          <tr ng-repeat="game in $ctrl.next">
-            <td>{{ game.sFullHomeTeam }}</td>
-            <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
-            <td>{{ game.home_score }} - {{ game.away_score }}</td>
-            <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
-            <td>{{ game.sFullAwayTeam }}</td>
-            <td><a class="pt-playable" href="{{ game.audio }}" title="{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}"><div class="chip">Escuchar<div></a></td>
-          </tr>
-        </tbody>
-      </table>
-      
-    </div>
-  </div>
-
-  <div ng-show="$ctrl.full.length > 0">
-    
     <div class="card-panel">
-      <div class="card-header">
-        <img src="./assets/img/logo-pl-white.png" alt="sopitas.com logo" height="105px">
-        <h4 class="centered">Partidos</h4>
-        <ul class="tabs">
-          <li class="tab col s3"><a href="#test1">Últimos resultados</a></li>
-          <li class="tab col s3"><a class="active" href="#test2">Próximamente</a></li>
-        </ul>
-      </div>
-      <table class="striped centered">
-        <!-- <thead class="match-header">
-          <th colspan="6"></th>
-        </thead> -->
-        <tbody>
-          <tr ng-repeat="game in $ctrl.full">
-            <td>{{ game.sHomeTeam }}</td>
-            <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
-            <td>{{ game.home_score }} - {{ game.away_score }}</td>
-            <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
-            <td>{{ game.sAwayTeam }}</td>
-            <td ng-if="game.audio"><a class="pt-playable" href="{{ game.audio }}" title="{{ game.sHomeTeam }}  {{ game.home_score }} - {{ game.away_score }} {{ game.sAwayTeam }}"><div class="chip">Escuchar<div></a></td>
-            <td ng-if="!game.audio"><div class="chip">No disponible<div></td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="card-header">
+            <img src="./assets/img/logo-pl-white.png" alt="pl logo" height="105px">
+            <h4 class="centered">Partidos</h4>
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#live">En Vivo</a></li>
+                <li class="tab col s3"><a class="active" href="#last">Jornada</a></li>
+                <li class="tab col s3"><a href="#table">Tabla</a></li>
+                <li class="tab col s3"><a href="#upcoming">Calendario</a></li>
+            </ul>
+        </div>
+        <div id="live" ng-if="$ctrl.live.length === 0" class="no-data">No hay partidos en vivo</div>
+        <div id="live" ng-if="$ctrl.live.length > 0">
+        <table class="striped centered" ng-if="$ctrl.live.length > 0">
+            <tbody>
+                <tr ng-repeat="game in $ctrl.live">
+                    <td>{{ game.sFullHomeTeam }}</td>
+                    <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.home_score }} - {{ game.away_score }}</td>
+                    <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.sFullAwayTeam }}</td>
+                    <td>
+                        <a class="pt-playable" href="{{ game.audio }}" title="{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}">
+                            <div class="chip">Escuchar
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table></div>
+        <div id="table">
+          <tablas-list> </tablas-list>
+        </div>
+        <table id="last" class="striped centered">
+            <tbody>
+                <tr ng-repeat="game in $ctrl.full">
+                    <td>{{ game.sHomeTeam }}</td>
+                    <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.home_score }} - {{ game.away_score }}</td>
+                    <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.sAwayTeam }}</td>
+                    <td ng-if="game.audio">
+                        <a class="pt-playable" href="{{ game.audio }}" title="{{ game.sHomeTeam }}  {{ game.home_score }} - {{ game.away_score }} {{ game.sAwayTeam }}">
+                            <div class="chip">Escuchar
+                            </div>
+                        </a>
+                    </td>
+                    <td ng-if="!game.audio">
+                        <div class="chip no-available">No disponible
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <games-list id="upcoming"> </games-list>
     </div>
-  </div>
 </div>
