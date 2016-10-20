@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-19 14:41:12
+* @Last Modified time: 2016-10-19 18:03:52
 */
 /* Font Family
 ================================================== */
@@ -70,6 +70,14 @@ nav {
     right: 15px;
     display: inline-block;
     vertical-align: middle;
+}
+.card, .card-image,
+.card .card-image img {
+  border-radius: 15px 15px 0 0;
+}
+
+.card .card-image .card-title {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .positions img,
@@ -199,6 +207,10 @@ table.striped>tbody>tr:nth-child(odd) {
     
 }
 
+.fa {
+  color: #e2ca46;
+}
+
 .tabs .tab {
     margin: 0 20px;
     margin-left: 20px;
@@ -244,8 +256,6 @@ table.striped>tbody>tr:nth-child(odd) {
   }
 }
 
-
-
 .pt-previous,
 .pt-next {
   font-size:1.5em;
@@ -253,7 +263,9 @@ table.striped>tbody>tr:nth-child(odd) {
   margin-left:.5em;
 }
 .pt-play-pause {
-  font-size: 3rem;
+      left: 100px;
+    position: absolute;
+    font-size: 6rem;
 }
 
 /* Hide/Show */
@@ -263,6 +275,7 @@ table.striped>tbody>tr:nth-child(odd) {
 } 
 .pt-play-pause.pt-playing .pause-btn {
   display:inline-block;
+
 }
 .pause-btn {
   position:relative;
@@ -350,31 +363,32 @@ table.striped>tbody>tr:nth-child(odd) {
 // .pt-link.pt-paused  { opacity:.5; font-weight:bold;}
 // .pt-link.pt-cue { color:red;}
 
-/** Not sure if loading in Font Awesome icons this way will break in certain
-  *  browsers, but going for it.
-  *  See: http://fortawesome.github.io/Font-Awesome/cheatsheet
-  */
-.pt-link:before {
-  // font-family:FontAwesome;
-  // content: '\f04b ';
-  // padding-right:.3em;
-  // padding-left:.5em;
-}
-.pt-link.pt-playing:before {
-  // font-family:FontAwesome;
-  // content: '\f04c ';
-  // padding-right:.3em;
-  // padding-left:.5em;
-}
+// /** Not sure if loading in Font Awesome icons this way will break in certain
+//   *  browsers, but going for it.
+//   *  See: http://fortawesome.github.io/Font-Awesome/cheatsheet
+//   */
+// .pt-link:before {
+//   font-family:FontAwesome;
+//   content: '\f04b ';
+//   padding-right:.3em;
+//   padding-left:.5em;
+// }
+// .pt-link.pt-playing:before {
+//   font-family:FontAwesome;
+//   content: '\f04c ';
+//   padding-right:.3em;
+//   padding-left:.5em;
+// }
 
 .pt-controls-wrapper {
   position:fixed;
   bottom:0;
   left:0;
   width:100%;
-  padding:1% 2%;
-  border-top:solid 1px #EEE;
-  background:rgba(0,0,0,.9);
+  // padding:1% 2%;
+  padding: 1% 2% 1% 10%;
+  border-top:solid 1px #6e4872;
+  background: rgba(100,72,114,.9);
   color:#FFF;
 }
 
