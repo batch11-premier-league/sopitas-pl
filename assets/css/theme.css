@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-19 18:03:52
+* @Last Modified time: 2016-10-19 23:42:50
 */
 /* Font Family
 ================================================== */
@@ -15,8 +15,10 @@ html {
 }
 body {
   // font-family: "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height:1.4em;
+  font-size: 0.8em;
+  font-weight: 300;
   /* With fixed position element, need to pass through width and height settings and adjust margin to allow for overlapping*/
   width:100%;
   margin-bottom:140px; /* Roughly the height of the controls*/
@@ -78,6 +80,19 @@ nav {
 
 .card .card-image .card-title {
     background: rgba(0, 0, 0, 0.7);
+    font-weight: 200;
+    line-height: 1em;
+}
+
+.card-content {
+  font-size: 1rem;
+  font-weight: 180;
+  line-height: 1.5em;
+  letter-spacing: .8px;
+}
+
+.card-content p{
+  padding-bottom: 1.2em;
 }
 
 .positions img,
@@ -197,7 +212,7 @@ table.striped>tbody>tr:nth-child(odd) {
 }
 
 .item-positions td{
-    margin: 10px 15px;
+    padding: 5px 5px;
 }
 
 .tabs {
@@ -263,9 +278,10 @@ table.striped>tbody>tr:nth-child(odd) {
   margin-left:.5em;
 }
 .pt-play-pause {
-      left: 100px;
+    left: 4%;
+    bottom: 3px;
     position: absolute;
-    font-size: 6rem;
+    font-size: 5rem;
 }
 
 /* Hide/Show */
