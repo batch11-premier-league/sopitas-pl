@@ -2,7 +2,7 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-20 15:52:47
+* @Last Modified time: 2016-10-20 16:27:05
 */
 /* Font Family
 ================================================== */
@@ -535,5 +535,8 @@ table.striped>tbody>tr:nth-child(odd) {
       margin-left: auto;
       left: auto;
       right: auto;
+  }
+  .pt-play-pause {
+    font-size: 5.5rem;
   }
 }

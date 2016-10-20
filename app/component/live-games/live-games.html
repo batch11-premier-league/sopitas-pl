@@ -27,6 +27,19 @@
                         </a>
                     </td>
                 </tr>
+                <tr ng-repeat="game in $ctrl.live">
+                    <td>{{ game.sFullHomeTeam }}</td>
+                    <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.home_score }} - {{ game.away_score }}</td>
+                    <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.sFullAwayTeam }}</td>
+                    <td>
+                        <a class="pt-playable" href="{{ game.audio }}" title="{{ game.home_team_abbr }}  {{ game.home_score }} - {{ game.away_score }} {{ game.away_team_abbr }}">
+                            <div class="chip">Escuchar
+                            </div>
+                        </a>
+                    </td>
+                </tr>
             </tbody>
         </table></div>
         <div id="table">

@@ -116,11 +116,15 @@
 	            games.full = response.data;
 	            writeGamesData(games.full);
 	            if (games.full.length > 0) {
+	            	var countForRandomLive = 0; // es para agregar algunos como si estuvieran en vivo
 	                angular.forEach(games.full, function(game) {
-	                    console.log(game.id);
+	                    countForRandomLive++
 	                    apiAudioRepeat.get({ optaId: game.opta_id }).$promise.then(function(response) {
 	                        game.audio = response.data[0].enclosure_url;
-
+	                        if(0 < countForRandomLive < 3) 
+	                        	games.live.push(game);
+	                        else
+	                        	games.next.push(game);
 	                    }, function(error) {
 	                    	console.log(error);
 	                        game.audio = false;
