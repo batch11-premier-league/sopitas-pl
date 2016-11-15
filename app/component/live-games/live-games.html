@@ -14,7 +14,8 @@
         <div id="live" ng-if="$ctrl.live.length > 0">
         <table class="striped centered" ng-if="$ctrl.live.length > 0">
             <tbody>
-                <tr ng-repeat="game in $ctrl.live">
+                <!-- SE COMENTA PARA LA SIMULACION -->
+                <!-- <tr ng-repeat="game in $ctrl.live">
                     <td>{{ game.sFullHomeTeam }}</td>
                     <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
                     <td>{{ game.home_score }} - {{ game.away_score }}</td>
@@ -27,7 +28,7 @@
                         </a>
                     </td>
                 </tr>
-                <tr ng-repeat="game in $ctrl.live">
+                <tr ng-repeat="game in $ctrl.next">
                     <td>{{ game.sFullHomeTeam }}</td>
                     <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
                     <td>{{ game.home_score }} - {{ game.away_score }}</td>
@@ -38,6 +39,34 @@
                             <div class="chip">Escuchar
                             </div>
                         </a>
+                    </td>
+                </tr> -->
+                <tr ng-repeat="game in $ctrl.live">
+                    <td>{{ game.sHomeTeam }}</td>
+                    <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.home_score }} - {{ game.away_score }}</td>
+                    <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.sAwayTeam }}</td>
+                    <td ng-if="game.audio">
+                        <a class="pt-playable" href="{{ game.audio }}" title="{{ game.sHomeTeam }}  {{ game.home_score }} - {{ game.away_score }} {{ game.sAwayTeam }}">
+                            <div class="chip">Escuchar
+                            </div>
+                        </a>
+                    </td>
+                    <td ng-if="!game.audio">
+                        <div class="chip no-available">No disponible
+                        </div>
+                    </td>
+                </tr>
+                <tr ng-repeat="game in $ctrl.next">
+                    <td>{{ game.sHomeTeam }}</td>
+                    <td><img ng-src="/img/{{game.home_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.kick_off_gmt | date:'shortTime' }}</td>
+                    <td><img ng-src="/img/{{game.away_team_opta_id}}.png" alt=""></td>
+                    <td>{{ game.sAwayTeam }}</td>
+                    <td ng-if="!game.audio">
+                        <div class="chip no-available">Por comenzar
+                        </div>
                     </td>
                 </tr>
             </tbody>

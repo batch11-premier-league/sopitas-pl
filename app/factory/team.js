@@ -55,7 +55,7 @@
 
     apiLastResults.$inject = ['$resource'];
     function apiLastResults($resource){
-        return $resource('http://talksport.com/api/fixture/?method=getResults&sport_id=1&tournament_id=8&season_id=2016&hsh=c178aa4d845d75c676574e370b2d8f0c&app_id=mshndevmkt&day_limit=7&format=jsonp')
+        return $resource('http://talksport.com/api/fixture/?method=getResults&sport_id=1&tournament_id=8&season_id=2016&hsh=c178aa4d845d75c676574e370b2d8f0c&app_id=mshndevmkt&day_limit=14&format=jsonp')
     }
 
     apiLivestream.$inject = ['$resource'];

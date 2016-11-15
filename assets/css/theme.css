@@ -2,57 +2,66 @@
 * @Author: manolocomi
 * @Date:   2016-09-30 20:18:08
 * @Last Modified by:   Manuel Comi
-* @Last Modified time: 2016-10-20 16:27:05
+* @Last Modified time: 2016-10-21 10:03:19
 */
+
+
 /* Font Family
 ================================================== */
 
 html {
-  width:100%;
+    width: 100%;
 }
+
 body {
-  // font-family: "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-family: 'Roboto', sans-serif;
-  line-height:1.4em;
-  font-size: 0.8em;
-  font-weight: 300;
-  /* With fixed position element, need to pass through width and height settings and adjust margin to allow for overlapping*/
-  width:100%;
-  margin-bottom:140px; /* Roughly the height of the controls*/
-  background-color: #ECEFF3;
+    // font-family: "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4em;
+    font-size: 0.8em;
+    font-weight: 300;
+    /* With fixed position element, need to pass through width and height settings and adjust margin to allow for overlapping*/
+    width: 100%;
+    margin-bottom: 140px;
+    /* Roughly the height of the controls*/
+    background-color: #ECEFF3;
 }
+
 a {
-  color:#0061b0;
-  text-decoration:none;
+    color: #0061b0;
+    text-decoration: none;
 }
 
-@media only screen and (min-width: 601px){
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-      height: 105px;
-      line-height: 105px;
-  }
-  nav {
-      color: #fff;
-      width: 100%;
-      height: 105px;
-      line-height: 105px;
-  }
-
+@media only screen and (min-width: 601px) {
+    nav,
+    nav .nav-wrapper i,
+    nav a.button-collapse,
+    nav a.button-collapse i {
+        height: 105px;
+        line-height: 105px;
+    }
+    nav {
+        color: #fff;
+        width: 100%;
+        height: 105px;
+        line-height: 105px;
+    }
+    .brand-logo.sopitas img {
+        vertical-align: middle;
+    }
 }
-
 
 nav {
     color: #fff;
     background-color: #ffeb60;
     width: 100%;
-    
 }
+
 .row {
-  
-  padding-top: 15px;
+    padding-top: 15px;
 }
+
 .match {
-  padding: 20px 10px;
+    padding: 20px 10px;
 }
 
 .collection .collection-item span.home .circle {
@@ -74,9 +83,11 @@ nav {
     display: inline-block;
     vertical-align: middle;
 }
-.card, .card-image,
+
+.card,
+.card-image,
 .card .card-image img {
-  border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 
 .card .card-image .card-title {
@@ -86,64 +97,62 @@ nav {
 }
 
 .card-content {
-  font-size: 1rem;
-  font-weight: 180;
-  line-height: 1.5em;
-  letter-spacing: .8px;
+    font-size: 1rem;
+    font-weight: 180;
+    line-height: 1.5em;
+    letter-spacing: .8px;
 }
 
-.card-content p{
-  padding-bottom: 1.2em;
+.card-content p {
+    padding-bottom: 1.2em;
 }
 
 .positions img,
 .matches img {
-  width: auto;
-  height: 30px;
-  vertical-align: middle;
+    width: auto;
+    height: 30px;
+    vertical-align: middle;
 }
+
 .card-header {
-  width: 100%; 
-  /*height: 138px; */
-  background-color: #e90052; 
-  border-radius: 20px 20px 0 0;
-  padding-top: 20px;
+    width: 100%;
+    /*height: 138px; */
+    background-color: #e90052;
+    border-radius: 20px 20px 0 0;
+    padding-top: 20px;
 }
 
 .card-header.positions {
-  min-height: 90px; 
+    min-height: 90px;
 }
 
 .card-header img {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .card-header h4 {
-  color: white;
-  font-size: 1.28rem;
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  text-align: center;
+    color: white;
+    font-size: 1.28rem;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .positions .card-panel,
 .matches .card-panel {
-  padding: 0 0;
-  border-radius: 20px 20px 0 0;
+    padding: 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
-
-
 .matches.header {
-  font-size:1.4 rem;
-  
+    font-size: 1.4 rem;
 }
 
 .match-header {
-  font-size: 1.4rem;
-  font-weight: 300;
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
 .logo-name-1 {
@@ -201,7 +210,7 @@ nav {
 }
 
 .badge img {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 table.striped>tbody>tr:nth-child(even) {
@@ -212,23 +221,21 @@ table.striped>tbody>tr:nth-child(odd) {
     background-color: #fff;
 }
 
-.item-positions td{
+.item-positions td {
     padding: 5px 5px;
 }
 
 .tabs {
-    
     background-color: transparent;
     margin: 0 10px;
-    
 }
 
 .tabs .indicator {
-     background-color: transparent; 
+    background-color: transparent;
 }
 
 .fa {
-  color: #e2ca46;
+    color: #e2ca46;
 }
 
 .tabs .tab {
@@ -242,273 +249,331 @@ table.striped>tbody>tr:nth-child(odd) {
     background-color: white;
     border-radius: 15px 15px 0 0;
 }
+
 .tabs .tab a {
     background-color: #c1104f;
     color: white;
 }
+
 .tabs .tab a.active {
     background-color: white;
     color: #333;
 }
 
-
-@media only screen and (max-width: 992px){
-  nav {
-    height: 65px;
-    line-height: 65px;
-  }
-  nav .brand-logo.pl {
-    left: 0;
-    -webkit-transform: translateX(0%); 
-    transform: translateX(0%);
-  }
-  .brand-logo img{
-      height: 65px;
-  }
-  nav .brand-logo.center {
-    right: 5%;
-      -webkit-transform: translateX(-5%);
-      transform: translateX(-5%);
-  }
+@media only screen and (max-width: 992px) {
+    nav {
+        height: 65px;
+        line-height: 65px;
+    }
+    nav .brand-logo.pl {
+        left: 0;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    .brand-logo img {
+        height: 65px;
+    }
+    nav .brand-logo.center {
+        vertical-align: middle;
+        right: 5%;
+        -webkit-transform: translateX(-5%);
+        transform: translateX(-5%);
+    }
 }
-
-
-
 
 
 /* Hide/Show */
+
 .pause-btn,
 .pt-play-pause.pt-playing .play-btn {
-  display:none;
-} 
-.pt-play-pause.pt-playing .pause-btn {
-  display:inline-block;
+    display: none;
+}
 
+.pt-play-pause.pt-playing .pause-btn {
+    display: inline-block;
 }
 
 .pt-scrubber {
-  margin-bottom: 0.5em;
-  margin-top: 1em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
 }
+
 .pt-scrubber .pt-statusbar {
-  height: 0.3em;
-  position: relative;
-  border-right:solid 1px #CCC;
-  border-bottom:solid 1px #CCC;
-  border-top:solid 1px #DCDCDC;
-  border-left:solid 1px #DCDCDC;
-  border-radius:1em;
-  background:#F9F9F9;
+    height: 0.3em;
+    position: relative;
+    border-right: solid 1px #CCC;
+    border-bottom: solid 1px #CCC;
+    border-top: solid 1px #DCDCDC;
+    border-left: solid 1px #DCDCDC;
+    border-radius: 1em;
+    background: #F9F9F9;
 }
+
 .pt-scrubber.dragging .pt-statusbar {
-  cursor: grabbing;
-  cursor:-webkit-grabbing;
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
 }
+
 .pt-scrubber .pt-statusbar .pt-position,
 .pt-scrubber .pt-statusbar .pt-loading {
-  position: absolute;    
-  height: 100%;
-  left: 0;
-  top: 0;
-  border-radius:1em;
-  width:0;
-}
-.pt-scrubber .pt-statusbar .pt-position {
-  background-color: #666666;
-  position:relative;
-}
-.pt-scrubber .pt-statusbar .pt-loading {
-  background-color:#F1F1F1;
-}
-.pt-scrubber .pt-statusbar .pt-handle {
-  position:absolute;
-  width:.75em;
-  height:.75em;
-  right:-1em; /* Half of width */
-  top:-.4em; /* Slightly less than half of height*/
-  border-radius:50%;
-  background:#FDFDFD;
-  border:double 3px #AAA;
-  transition:  all .1s;
-  cursor: pointer;
-}
-.pt-time {
-  float:right;
-  font-size:.7em;
-}
-.pt-current-track-title {
-  color:#DDD;
-  font-size:1.7em;
-  margin-top:-.5em;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 1em;
+    width: 0;
 }
 
+.pt-scrubber .pt-statusbar .pt-position {
+    background-color: #666666;
+    position: relative;
+}
+
+.pt-scrubber .pt-statusbar .pt-loading {
+    background-color: #F1F1F1;
+}
+
+.pt-scrubber .pt-statusbar .pt-handle {
+    position: absolute;
+    width: .75em;
+    height: .75em;
+    right: -1em;
+    /* Half of width */
+    top: -.4em;
+    /* Slightly less than half of height*/
+    border-radius: 50%;
+    background: #FDFDFD;
+    border: double 3px #AAA;
+    transition: all .1s;
+    cursor: pointer;
+}
+
+.pt-time {
+    float: right;
+    font-size: .7em;
+}
+
+.pt-current-track-title {
+    color: #DDD;
+    font-size: 1.7em;
+    margin-top: -.5em;
+}
 
 .filler {
-  line-height:1.7em;
+    line-height: 1.7em;
 }
 
 .pt-play-pause.pt-buffering,
 .pt-link.pt-buffering {
-  -webkit-animation: buffering 1.4s infinite;
-  animation:  buffering 1.4s infinite;
+    -webkit-animation: buffering 1.4s infinite;
+    animation: buffering 1.4s infinite;
 }
+
 
 /* Utility class to hide elements if no links found on page load */
+
 .pt-hide {
-  display:none;
+    display: none;
 }
 
-/* Buffering animation */
 
 /* Buffering animation */
+
+
+/* Buffering animation */
+
 @-webkit-keyframes buffering {
-     0%  { opacity: 1.0}
-    10%  { opacity: .90}
-    20%  { opacity: .80}
-    30%  { opacity: .70}
-    40%  { opacity: .60} 
-    50%  { opacity: .50}
-    60%  { opacity: .60}
-    70%  { opacity: .70}
-    80%  { opacity: .80}
-    90%  { opacity: .90}
-    100% { opacity: 1.0}
+    0% {
+        opacity: 1.0
+    }
+    10% {
+        opacity: .90
+    }
+    20% {
+        opacity: .80
+    }
+    30% {
+        opacity: .70
+    }
+    40% {
+        opacity: .60
+    }
+    50% {
+        opacity: .50
+    }
+    60% {
+        opacity: .60
+    }
+    70% {
+        opacity: .70
+    }
+    80% {
+        opacity: .80
+    }
+    90% {
+        opacity: .90
+    }
+    100% {
+        opacity: 1.0
+    }
 }
 
 @keyframes buffering {
-     0%  { opacity: 1.0}
-    10%  { opacity: .90}
-    20%  { opacity: .80}
-    30%  { opacity: .70}
-    40%  { opacity: .60} 
-    50%  { opacity: .50}
-    60%  { opacity: .60}
-    70%  { opacity: .70}
-    80%  { opacity: .80}
-    90%  { opacity: .90}
-    100% { opacity: 1.0}
+    0% {
+        opacity: 1.0
+    }
+    10% {
+        opacity: .90
+    }
+    20% {
+        opacity: .80
+    }
+    30% {
+        opacity: .70
+    }
+    40% {
+        opacity: .60
+    }
+    50% {
+        opacity: .50
+    }
+    60% {
+        opacity: .60
+    }
+    70% {
+        opacity: .70
+    }
+    80% {
+        opacity: .80
+    }
+    90% {
+        opacity: .90
+    }
+    100% {
+        opacity: 1.0
+    }
 }
 
-
-
-  .pt-previous,
+.pt-previous,
 .pt-next {
-  font-size:1.5em;
-  float:right;
-  margin-left:.5em;
+    font-size: 1.5em;
+    float: right;
+    margin-left: .5em;
 }
+
 .pt-play-pause {
     left: 6%;
     bottom: 3.5px;
     position: absolute;
     font-size: 5rem;
 }
+
 .pause-btn {
-  position:relative;
-  left:-4px;
-  top:-2px;
-  letter-spacing:-.005em;
+    position: relative;
+    letter-spacing: -.005em;
 }
+
 .pt-controls-wrapper {
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  // padding:1% 2%;
-  padding: 1% 2% 1% 13%;
-  border-top:solid 1px #6e4872;
-  background: rgba(100,72,114,.9);
-  color:#FFF;
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    // padding:1% 2%;
+    padding: 1% 2% 1% 13%;
+    border-top: solid 1px #6e4872;
+    background: rgba(100, 72, 114, .9);
+    color: #FFF;
 }
 
-@media only screen and (max-width: 992px) and (min-width: 461px){
-  .pt-play-pause {
-    left: 5%;
-    font-size: 4.5rem;
-    bottom: 2px;
-  }
-  .pt-controls-wrapper {
-    padding: 1% 5% 1% 15%;
-  }
+@media only screen and (max-width: 992px) and (min-width: 461px) {
+    .pt-play-pause {
+        left: 5%;
+        font-size: 4.5rem;
+        bottom: 2px;
+    }
+    .pt-controls-wrapper {
+        padding: 1% 5% 1% 15%;
+    }
 }
 
-
-@media only screen and (max-width: 460px){
-  
-  
-  
-  .tabs .tab a {
-     font-size: 0.8em;
-  }
-  a {
-    font-size: 0.8em;
-  }
-  .pt-play-pause {
-    font-size: 4rem;
-  }
-  .pt-controls-wrapper {
-    padding: 1% 5% 1% 20%;
-  }
-  .pt-current-track-title { 
-    font-size: 1.3em;
-  }
+@media only screen and (max-width: 460px) {
+    .tabs .tab a {
+        font-size: 0.8em;
+    }
+    a {
+        font-size: 0.8em;
+    }
+    .pt-play-pause {
+        font-size: 4rem;
+    }
+    .pt-controls-wrapper {
+        padding: 1% 5% 1% 20%;
+    }
+    .pt-current-track-title {
+        font-size: 1.3em;
+    }
 }
-
 
 .opta-widget-container .optafacts li {
-  padding:8px 8px 8px 22px;
-  color:#4f5155;
+    padding: 8px 8px 8px 22px;
+    color: #4f5155;
 }
+
 .alert-team {
-  color:#ed1c24;
-  font-weight:bold;
+    color: #ed1c24;
+    font-weight: bold;
 }
+
 .goal {
-  background-image:url(/img/goal.png);
-  background-repeat:no-repeat;
-  /*background-position:-5px -173px;*/
-  display:inline-block;
-  width:12px;
-  height:12px;
-  margin:0 0 0 10px;
-  padding:0 10px;
-  line-height:3;
-  overflow:hidden;
+    background-image: url(/img/goal.png);
+    background-repeat: no-repeat;
+    /*background-position:-5px -173px;*/
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 0 0 10px;
+    padding: 0 10px;
+    line-height: 3;
+    overflow: hidden;
 }
+
 .substitution-icon {
-  background-image:url(/img/icon-substitution.png);
-  background-repeat:no-repeat;
-  /*background-position:-5px -368px;*/
-  display:inline-block;
-  width:12px;
-  height:10px;
-  margin:0 10px 0 10px;
-  overflow:hidden;
+    background-image: url(/img/icon-substitution.png);
+    background-repeat: no-repeat;
+    /*background-position:-5px -368px;*/
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    margin: 0 10px 0 10px;
+    overflow: hidden;
 }
+
 .yellow-card {
-  background-image:url(/img/yellow-card.png);
-  background-repeat:no-repeat;
-  /*background-position:-5px -64px;*/
-  display:inline-block;
-  width:11px;
-  height:15px;
-  margin:0 0 0 10px;
-  padding:0 10px;
-  line-height:3;
-  overflow:hidden;
+    background-image: url(/img/yellow-card.png);
+    background-repeat: no-repeat;
+    /*background-position:-5px -64px;*/
+    display: inline-block;
+    width: 11px;
+    height: 15px;
+    margin: 0 0 0 10px;
+    padding: 0 10px;
+    line-height: 3;
+    overflow: hidden;
 }
+
 .red-card {
-  background-image:url(/img/red-card.png);
-  background-repeat:no-repeat;
-  /*background-position:-5px -44px;*/
-  display:inline-block;
-  width:11px;
-  height:15px;
-  margin:0 0 0 10px;
-  padding:0 10px;
-  line-height:3;
-  overflow:hidden;
+    background-image: url(/img/red-card.png);
+    background-repeat: no-repeat;
+    /*background-position:-5px -44px;*/
+    display: inline-block;
+    width: 11px;
+    height: 15px;
+    margin: 0 0 0 10px;
+    padding: 0 10px;
+    line-height: 3;
+    overflow: hidden;
 }
+
 .next-games {
     max-height: 1100px;
     height: 1000px;
@@ -525,18 +590,48 @@ table.striped>tbody>tr:nth-child(odd) {
     border-radius: 16px;
     background-color: #e4e4e4;
 }
+
 .no-data {
-  min-height: 500px;
+    min-height: 500px;
 }
 
-@media only screen and (min-width: 1280px){
-  .row  {
-      width: 1280px;
-      margin-left: auto;
-      left: auto;
-      right: auto;
-  }
-  .pt-play-pause {
-    font-size: 5.5rem;
-  }
+@media only screen and (min-width: 1280px) {
+    .row {
+        width: 1280px;
+        margin-left: auto;
+        left: auto;
+        right: auto;
+    }
+    .pt-play-pause {
+        font-size: 5.5rem;
+    }
+}
+
+.chip.pt-current-time {
+    background-color: #ff5721;
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    left: 1%;
+    bottom: 35%;
+    font-size: 1.5em;
+    color: #fff;
+    line-height: 2em;
+}
+
+.footer-copyright {
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: solid 1px #6e4872;
+    background-color: #ffeb60;
+    color: #333;
+    line-height: 40px;
+}
+
+.footer-copyright img {
+    height: 25px;
+    vertical-align: middle;
 }

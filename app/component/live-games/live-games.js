@@ -37,19 +37,6 @@
             firebase.database().ref('games/').set(games);
         }
 
-        var gameRef = firebase.database().ref('games').child(0);
-
-
-		gameRef.once('value', function(snapshot) {
-
-	    if( snapshot.val() === null ) {
-	        /* does not exist */
-	    } else {
-	    	console.log(snapshot.val());
-	        snapshot.ref().update({"away_score": 1});
-	    }
-
-	});
         var countUpdates = 0;
         var alertRef = firebase.database().ref('games/1');
         var messageNotification = null
@@ -87,7 +74,6 @@
 
         function getLiveMatches() {
         	countInterval++
-        	console.log('Intervalo: '+countInterval)
             apiLiveGames.get().$promise.then(function(response) {
                 angular.forEach(data, function(game) {
                     if (game.match_status == 'LIVE' || game.match_status == 'HALF-TIME') {
@@ -123,11 +109,9 @@
 	                        game.audio = response.data[0].enclosure_url;
 	                        if(0 < countForRandomLive < 3) 
 	                        	games.live.push(game);
-	                        else
-	                        	games.next.push(game);
 	                    }, function(error) {
 	                    	console.log(error);
-	                        game.audio = false;
+	                        game.audio = false;	                        
 	                    });
 	                })
 
@@ -140,7 +124,7 @@
         function showAlert () {
 			desktopNotification.requestPermission().then(function (permission) {
 				  // User allowed the notification
-				  desktopNotification.show('Gol', {
+				  desktopNotification.show('Bienvenidos', {
 				  	icon: './img/sopitas-icon.png',
 				    body: messageNotification,
 				    onClick: function () {
